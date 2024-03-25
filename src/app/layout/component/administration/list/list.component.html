@@ -1,0 +1,45 @@
+<div class="row">
+    <button class="btn btn-info form-control" *ngIf="acces.c" (click)="create()">create</button>
+    <button class="btn btn-info form-control" *ngIf="!acces.c" (click)="create()" disabled>create</button>
+</div>
+<div class="row" *ngIf="user1.role=='admin'" [ngClass]="{hid:!acces,input1:!acces}">
+    <div class="col-2 text-center ">name</div>
+    <div class="col-2 text-center ">cin</div>
+    <div class="col-2 text-center ">tel</div>
+    <div class="col-2 text-center ">email</div>
+    <div class="col-2 text-center ">delete</div>
+    <div class="col-2 text-center ">update</div>
+
+<ng-container *ngFor="let item of hero" >
+    <div class="col-2 mt-3"><input class="form-control" type="text" [(ngModel)]="item.name"></div>
+    <div class="col-2 mt-3"><input class="form-control" type="text" [(ngModel)]="item.cin"></div>
+    <div class="col-2 mt-3"><input class="form-control" type="text" [(ngModel)]="item.tel"></div>
+    <div class="col-2 mt-3"><input class="form-control" type="text" [(ngModel)]="item.email"></div>
+
+    <div class="col-2 mt-3" *ngIf="acces.d" ><button (click)="del(item._id)" class="btn btn-dark form-control" >delete</button></div>
+    <div class="col-1 mt-3" *ngIf="acces.u" ><button (click)="up(item)" class="btn btn-dark form-control" >update</button></div>
+
+
+    <div class="col-2 mt-3" *ngIf="!acces.d" ><button (click)="del(item._id)" class="btn btn-dark form-control"  disabled>delete</button></div>
+    <div class="col-1 mt-3" *ngIf="!acces.u" ><button (click)="up(item)" class="btn btn-dark form-control"  disabled>update</button></div>
+
+    <div class="col-1 mt-3" ><button (click)="access(item._id)" class="btn btn-dark form-control" >acces</button></div>
+
+
+</ng-container>
+
+</div>
+
+
+<!--
+<div *ngFor="let item of hero">
+
+    <input type="text" [(ngModel)]="item.name">
+    <input type="text" [(ngModel)]="item.cin">
+    <input type="text" [(ngModel)]="item.tel">
+    <input type="text" [(ngModel)]="item.email">
+    <button (click)="del(item._id)">del</button>
+    <button (click)="up(item)">up</button>
+</div>
+
+-->

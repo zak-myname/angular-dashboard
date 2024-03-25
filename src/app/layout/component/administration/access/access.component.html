@@ -1,0 +1,26 @@
+<h1>create access</h1>
+
+<h2>{{user.name}}</h2>
+
+<div class="table-top">
+    <button (click)="list()">choose usr</button>
+</div>
+
+<table class="table" border="1">
+        <tr *ngFor="let data of access.access">
+            <th>
+                {{data.label}}
+            </th>
+            <td>
+
+                Voir : <input type="checkbox" [(ngModel)]="data.r">
+                Creer : <input type="checkbox" [(ngModel)]="data.c">
+                Modifier : <input type="checkbox" [(ngModel)]="data.u">
+                Supprimer : <input type="checkbox" [(ngModel)]="data.d">
+                Tout selectionner : <input type="checkbox" [(ngModel)]="data.r && data.c && data.d && data.u">
+            </td>
+        </tr>
+        <tr>
+            <button (click)="up_access(access.access)">update access</button>
+        </tr>
+</table>

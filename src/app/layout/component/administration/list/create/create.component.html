@@ -1,0 +1,32 @@
+<div class="mb-md-5 mt-md-4 pb-5">
+    
+    <h2 class="fw-bold mb-2 text-uppercase">create</h2>
+
+    <div class="form-outline form-white mb-4">
+      <input type="text" id="typeEmailX" class="form-control form-control-lg" [(ngModel)]="user.name"/>
+      <label class="form-label" for="typeEmailX">Name</label>
+    </div>
+
+    <div class="form-outline form-white mb-4">
+      <input type="text" id="typeEmailX" class="form-control form-control-lg" [(ngModel)]="user.cin"/>
+      <label class="form-label" for="typeEmailX">CIN</label>
+    </div>
+
+    <div class="form-outline form-white mb-4">
+      <input type="email" id="typeEmailX" class="form-control form-control-lg" [(ngModel)]="user.email"/>
+      <label class="form-label" for="typeEmailX">Email</label>
+    </div>
+
+    <div class="form-outline form-white mb-4">
+      <input type="password" id="typePasswordX" class="form-control form-control-lg" [(ngModel)]="user.pass"/>
+      <label class="form-label" for="typePasswordX">Password</label>
+    </div>
+
+    <div class="form-outline form-white mb-4">
+      <input type="file" id="typeEmailX" class="form-control form-control-lg" [(ngModel)]="user.pf"/>
+      <label class="form-label" for="typeEmailX">Phote de profile</label>
+    </div>
+
+    <button class="btn btn-outline-dark btn-lg px-5" (click)="create()" type="submit">create</button>
+
+  </div>
